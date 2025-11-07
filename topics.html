@@ -1,0 +1,91 @@
+<!-- this for topics -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Topics | Community Health Awareness</title>
+  <link rel="stylesheet" href="../static/style/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Community Health Awareness</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}" >Home</a></li>
+          <li><a href="{{ url_for('topics') }}">Health Topics</a></li>
+          <li><a href="{{ url_for('events') }}">Events</a></li>
+          <li><a href="{{ url_for('stories') }}">Community Stories</a></li>
+          <li><a href="{{ url_for('topics') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <h2>Health Awareness Topics</h2>
+    <p>Explore key areas of health and wellness to stay informed and healthy.</p>
+  </section>
+
+  <!-- Topics Section -->
+  <section class="topics">
+    <div class="container">
+      <div class="topic-grid">
+        <!-- Nutrition -->
+        <div class="topic-card">
+          <div class="img">
+          <img src="../static/images/Nutrition1.jpg" width="200xp" height="200" alt="Nutrition" />
+          <h3>Nutrition</h3>
+          <p>
+            Good nutrition is vital for a healthy lifestyle. Learn about balanced diets, hydration,
+            and how to make smart food choices for overall wellness.
+          </p>
+          </div>
+          <!-- <a href="#" class="btn">Read More</a> -->
+        </div>
+
+        <!-- Mental Health -->
+        <div class="topic-card">
+          <img src="../static/images/Mental health.jpg" width="200xp" height="200" alt="Mental Health" />
+          <h3>Mental Health</h3>
+          <p>
+            Mental health affects how we think, feel, and act. Explore ways to manage stress,
+            anxiety, and maintain emotional balance.
+          </p>
+          <!-- <a href="#" class="btn">Read More</a> -->
+        </div>
+
+        <!-- Fitness -->
+        <div class="topic-card">
+          <img src="../static/images/Physical fitness.jpg" width="200xp" height="auto" alt="Fitness" />
+          <h3>Physical Fitness</h3>
+          <p>
+            Regular exercise improves physical and mental well-being. Discover easy workout routines
+            and the benefits of staying active.
+          </p>
+          <!-- <a href="#" class="btn">Read More</a> -->
+        </div>
+
+        <!-- Disease Prevention -->
+        <div class="topic-card">
+          <img src="../static/images/Disease Preventation.png" width="200xp" height="200" alt="Disease Prevention" />
+          <h3>Disease Prevention</h3>
+          <p>
+            Preventive care saves lives. Learn about vaccinations, hygiene practices, and early
+            detection of common diseases.
+          </p>
+          <!-- <a href="#" class="btn">Read More</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Community Health Awareness | Designed by Students for the Community</p>
+  </footer>
+</body>
+</html>

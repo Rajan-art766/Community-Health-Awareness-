@@ -1,0 +1,94 @@
+<!-- this for COntact -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Community Health Awareness</title>
+  <link rel="stylesheet" href="../static/style/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Community Health Awareness</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}" >Home</a></li>
+          <li><a href="{{ url_for('topics') }}">Health Topics</a></li>
+          <li><a href="{{ url_for('events') }}">Events</a></li>
+          <li><a href="{{ url_for('stories') }}">Community Stories</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Reach out for feedback, suggestions, or collaborations.</p>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="contact-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>📍 Address</h3>
+          <p>Jawahar Education Society's, INSTITUTE OF TECHNOLOGY, MANAGEMENT AND RESEARCH, NASHIK, Survey No 48, Gowardhan, Gangapur Rd,<br />Nashik-422222, Maharashtra, India</p>
+        </div>
+        <div class="info-card">
+          <h3>📧 Email</h3>
+          <p><a href="mailto:healthaware@gmail.com">healthaware@gmail.com</a></p>
+        </div>
+        <div class="info-card">
+          <h3>📞 Phone</h3>
+          <p>+91 98765 43210</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form">
+    <div class="container">
+      <h2>Send Us a Message</h2>
+      <form method="post" class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label">Name</label>
+    <input name="name" required class="form-control">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Email</label>
+    <input name="email" required class="form-control" type="email">
+  </div>
+  <div class="col-12">
+    <label class="form-label">Message</label>
+    <textarea name="message" required class="form-control" rows="4"></textarea>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-success">Send</button>
+  </div>
+</form>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map">
+    <div class="container">
+      <h2>Find Us</h2>
+      <div class="map-frame">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d541.3442759194309!2d73.68930966805083!3d20.032588438643266!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddedd75b257ee7%3A0xd607636433df8d5f!2sJawahar%20Education%20Society&#39;s%2C%20INSTITUTE%20OF%20TECHNOLOGY%2C%20MANAGEMENT%20AND%20RESEARCH%2C%20NASHIK!5e0!3m2!1sen!2sin!4v1759770202043!5m2!1sen!2sin"
+          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Community Health Awareness | Designed by Students for the Community</p>
+  </footer>
+</body>
+</html>

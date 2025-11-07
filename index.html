@@ -1,0 +1,93 @@
+<!-- this for home  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Health Awareness</title>
+  
+  <link rel="stylesheet" href="../static/style/style.css" />
+</head>
+<body>
+  <style>
+    /* <!--For BackGround image --> */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("../static/images/file.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    
+  </style>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Community Health Awareness</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}" >Home</a></li>
+          <li><a href="{{ url_for('topics') }}">Health Topics</a></li>
+          <li><a href="{{ url_for('events') }}">Events</a></li>
+          <li><a href="{{ url_for('stories') }}">Community Stories</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="img">
+      <!-- <div class="" -->
+      <img src="../static/images/healthAwareness.jpeg" class="mx-auto rounded-full border-4 border-white mb-5 w-40 h-40 object-cover fade-in">
+      <div class="hero-content">
+        <h2>Together for a Healthier Community</h2>
+        <p>Join us in spreading awareness about health, wellness, and preventive care.</p>
+        <a href="{{ url_for('events') }}" class="btn">Join an Event</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <h2>About the Initiative</h2>
+      <p>
+        The Community Health Awareness Project aims to educate and engage people in our local area
+        about key health topics like nutrition, mental health, disease prevention, and hygiene.
+        Together, we can build a healthier tomorrow.
+      </p>
+    </div>
+  </section>
+
+  <!-- Health Topics Section -->
+  <section class="topics">
+    <div class="container">
+      <h2>Popular Health Topics</h2>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <h3>Nutrition</h3>
+          <p>Learn about balanced diets and healthy eating habits.</p>
+        </div>
+        <div class="topic-card">
+          <h3>Mental Health</h3>
+          <p>Understand the importance of emotional well-being.</p>
+        </div>
+        <div class="topic-card">
+          <h3>Preventive Care</h3>
+          <p>Discover ways to prevent common diseases and stay healthy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Community Health Awareness | Designed by Students for the Community</p>
+  </footer>
+</body>
+</html>

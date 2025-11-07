@@ -1,0 +1,135 @@
+<!-- this for events -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Events | Community Health Awareness</title>
+  <link rel="stylesheet" href="../static/style/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Community Health Awareness</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}" >Home</a></li>
+          <li><a href="{{ url_for('topics') }}">Health Topics</a></li>
+          <li><a href="{{ url_for('events') }}">Events</a></li>
+          <li><a href="{{ url_for('stories') }}">Community Stories</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <h2>Upcoming Health Events & Camps</h2>
+    <p>Join hands to promote community health and well-being!</p>
+  </section>
+
+  <!-- Event List -->
+  <!-- <section class="events">
+    <div class="container">
+      <div class="event-card">
+        <h3>Free Health Check-up Camp</h3>
+        <p><strong>Date:</strong> 15 October 2025</p>
+        <p><strong>Location:</strong> City Community Hall, Nashik</p>
+        <p>
+          Get free medical checkups and consultations from local doctors. Learn about healthy
+          living and preventive care.
+        </p>
+      </div>
+
+      <div class="event-card">
+        <h3>Blood Donation Drive</h3>
+        <p><strong>Date:</strong> 25 October 2025</p>
+        <p><strong>Location:</strong> Red Cross Center, Nashik</p>
+        <p>
+          Donate blood and save lives. All donors will receive a health kit and participation
+          certificate.
+        </p>
+      </div>
+
+      <div class="event-card">
+        <h3>Women's Health Awareness Workshop</h3>
+        <p><strong>Date:</strong> 1 November 2025</p>
+        <p><strong>Location:</strong> Nashik Polytechnic Auditorium</p>
+        <p>
+          A workshop focused on women’s health, hygiene, and nutrition, led by healthcare
+          professionals.
+        </p>
+      </div>
+    </div>
+  </section> -->
+<section class="events">
+  <div class="container">
+    {% if events %}
+      {% for e in events %}
+        <div class="event-card">
+          <h3>{{ e[0] }}</h3>
+          <p><strong>Date:</strong> {{ e[1] }}</p>
+          <p><strong>Location:</strong> {{ e[2] }}</p>
+          <p>{{ e[3] }}</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No events available at this time.</p>
+    {% endif %}
+  </div>
+</section>
+  <!-- Registration Form -->
+  <section class="register">
+    <div class="container">
+      <h2>Register for an Event</h2>
+      <form method="POST" action="/events">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="event">Select Event:</label>
+        <select id="event" name="event" required>
+          <option value="">-- Choose an event --</option>
+          <option value="checkup">Free Health Check-up Camp</option>
+          <option value="blooddrive">Blood Donation Drive</option>
+          <option value="womensworkshop">Women's Health Awareness Workshop</option>
+        </select>
+
+        <label for="role">I want to participate as:</label>
+        <select id="role" name="role" required>
+          <option value="">-- Select Role --</option>
+          <option value="participant">Participant</option>
+          <option value="volunteer">Volunteer</option>
+        </select>
+
+        <button type="submit" class="btn">Submit Registration</button>
+      </form>
+    </div>
+  </section>
+<!-- <section class="event-register">
+    <div class="container">
+      <h2>Register for an Event</h2>
+      <form method="POST" action="/events">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="event">Event Name:</label>
+        <input type="text" id="event" name="event" placeholder="e.g., Health Camp 2025" required />
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+  </section> -->
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Community Health Awareness | Designed by Students for the Community</p>
+  </footer>
+</body>
+</html>

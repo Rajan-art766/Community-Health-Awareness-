@@ -1,0 +1,126 @@
+<!-- this for stories -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Stories | Community Health Awareness</title>
+  <link rel="stylesheet" href="../static/style/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Community Health Awareness</h1>
+      <nav>
+       <ul>
+          <li><a href="{{ url_for('index') }}" >Home</a></li>
+          <li><a href="{{ url_for('topics') }}">Health Topics</a></li>
+          <li><a href="{{ url_for('events') }}">Events</a></li>
+          <li><a href="{{ url_for('stories') }}">Community Stories</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <h2>Inspiring Community Stories</h2>
+    <p>Real stories from people making healthier choices and inspiring others.</p>
+  </section>
+
+  <!-- Story Cards -->
+  <section class="stories">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-card">
+          <img src="images/story1.jpg" alt="Community Story" />
+          <h3>Ravi’s Journey to Fitness</h3>
+          <p>
+            Ravi, a 35-year-old teacher, turned his life around by adopting a healthy diet and
+            walking daily. He lost 12 kg in 4 months and inspired his students to join him!
+          </p>
+        </div>
+
+        <div class="story-card">
+          <img src="images/story2.jpg" alt="Community Story" />
+          <h3>Anita’s Mental Health Awareness Drive</h3>
+          <p>
+            After facing anxiety, Anita started a local awareness campaign on mental health.
+            Her sessions now help over 200 women in her neighborhood.
+          </p>
+        </div>
+
+        <div class="story-card">
+          <img src="images/story3.jpg" alt="Community Story" />
+          <h3>Blood Donors Club Initiative</h3>
+          <p>
+            A group of college students created a volunteer club to organize regular blood donation
+            drives, saving countless lives through their dedication.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Story Cards -->
+  <section class="stories">
+    <div class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, msg in messages %}
+            <div class="flash flash-{{ category }}">{{ msg }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {% if stories %}
+        <div class="story-grid">
+          {% for s in stories %}
+            <div class="story-card">
+              <h3>{{ s[2] }}</h3>
+              <p><em>by {{ s[0] }} ({{ s[1] }})</em></p>
+              <p>{{ s[3] }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No stories submitted yet. Be the first to share!</p>
+      {% endif %}
+    </div>
+  </section>
+
+
+  <!-- Submit Story Form -->
+  <section class="submit-story">
+    <div class="container">
+      <h2>Share Your Story</h2>
+      <p>
+        Have a personal health success story or community initiative to share? Tell us below and
+        inspire others!
+      </p>
+      <form method="POST" action="/stories">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="title">Story Title:</label>
+        <input type="text" id="title" name="title" placeholder="Title of your story" required />
+
+        <label for="story">Your Story:</label>
+        <textarea id="story" name="story" rows="5" placeholder="Write your story here..." required></textarea>
+
+        <button type="submit" class="btn">Submit Story</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Community Health Awareness | Designed by Students for the Community</p>
+  </footer>
+</body>
+</html>
